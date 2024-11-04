@@ -1,0 +1,187 @@
+:root {
+    --primary-color: #3B82F6;
+    --secondary-color: #1E3A8A;
+    --background-color: #F3F4F6;
+    --text-color: #1F2937;
+    --card-background: #FFFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header {
+    background-color: var(--card-background);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo svg {
+    margin-right: 0.5rem;
+}
+
+nav {
+    display: flex;
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+main {
+    padding: 6rem 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    color: var(--secondary-color);
+    margin-bottom: 1.5rem;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.feature-card {
+    background-color: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+}
+
+.feature-description {
+    font-size: 0.875rem;
+}
+
+footer {
+    background-color: var(--card-background);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: 1rem;
+}
+
+footer nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        margin-top: 1rem;
+        opacity: 0;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    nav.active {
+        display: flex;
+        flex-direction: column;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    nav a {
+        margin: 0.5rem 0;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}
