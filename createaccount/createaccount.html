@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - LedgerIQ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/createaccount.css">
+    <link rel="icon" href="../LedgerIQ.png" type="image/png">
+</head>
+<body>
+    <header>
+        <a href="../index.html" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="2" ry="2"></rect>
+                <path d="M22 6l-10 7L2 6"></path>
+            </svg>
+            <span>LedgerIQ</span>
+        </a>
+        <button class="menu-button" aria-label="Toggle menu">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav>
+            <a href="../features/features.html">Features</a>
+            <a href="../pricing/pricing.html">Pricing</a>
+            <a href="../about/about.html">About</a>
+            <a href="../contact/contact.html">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <h1>Create Your LedgerIQ Account</h1>
+            <p class="subtitle">Join other businesses transforming their financial management</p>
+        </section>
+        <section class="create-account-form">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="full-name">Full Name</label>
+                    <input type="text" id="full-name" name="full-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="button">Create Account</button>
+            </form>
+            <p class="terms">
+                By creating an account, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.
+            </p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 LedgerIQ. All rights reserved.</p>
+        <p>Powered by Trickal Holdings</p>
+        <nav>
+            <a href="#">Terms of Service</a> |
+            <a href="#">Privacy Policy</a>
+        </nav>
+    </footer>
+    <script>
+        // Mobile menu functionality
+        const menuButton = document.querySelector('.menu-button');
+        const nav = document.querySelector('nav');
+
+        menuButton.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            if (nav.classList.contains('active')) {
+                menuButton.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                menuButton.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.create-account-form').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
