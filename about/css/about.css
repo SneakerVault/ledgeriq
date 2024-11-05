@@ -212,3 +212,8 @@ footer nav a {
         grid-template-columns: 1fr;
     }
 }
+
+.spartan-font {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 800;
+}
